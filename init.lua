@@ -207,6 +207,9 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- Set keymap to format json files with jq
+vim.api.nvim_set_keymap('n', '<leader>fj', ':%!jq . <CR>', { desc = '[F]ormat [J]son', noremap = true, silent = true })
+
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
