@@ -840,9 +840,11 @@ require('lazy').setup({
             -- set group index to 0 to skip loading LuaLS completions as lazydev recommends it
             group_index = 0,
           },
-          { name = 'nvim_lsp' },
-          { name = 'luasnip' },
-          { name = 'path' },
+          { name = 'nvim_lsp', priority = 100, group_index = 1 },
+          { name = 'luasnip', priority = 95, group_index = 1 },
+          { name = 'path', priority = 90, group_index = 1 },
+          { name = 'codeium', priority = 85, group_index = 1 },
+          { name = 'copilot', priority = 80, group_index = 2 },
         },
       }
     end,
@@ -980,6 +982,8 @@ require('lazy').setup({
   require 'custom.plugins.none-ls',
   require 'custom.plugins.fugitive',
   require 'custom.plugins.codeium',
+  require 'custom.plugins.copilot-cmp',
+  require 'custom.plugins.copilot',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.

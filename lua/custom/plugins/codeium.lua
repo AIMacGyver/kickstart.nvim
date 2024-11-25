@@ -17,10 +17,10 @@ return {
     }
     local cmp = require 'cmp'
     local sources = cmp.get_config().sources or {}
-    table.insert(sources, { name = 'codeium', priority = 90 })
+    table.insert(sources, { name = 'codeium', priority = 85 })
     cmp.setup {
       sources = sources,
     }
   end,
-  event = 'BufEnter',
+  event = 'InsertEnter',
 }
