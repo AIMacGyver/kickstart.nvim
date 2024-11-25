@@ -157,10 +157,6 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
-vim.o.foldmethod = 'expr'
-vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
-vim.o.foldenable = true
-
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
