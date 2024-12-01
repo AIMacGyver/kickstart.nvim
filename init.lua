@@ -841,7 +841,7 @@ require('lazy').setup({
           { name = 'luasnip', priority = 95, group_index = 1 },
           { name = 'path', priority = 90, group_index = 1 },
           { name = 'codeium', priority = 85, group_index = 1 },
-          { name = 'copilot', priority = 80, group_index = 2 },
+          -- { name = 'copilot', priority = 80, group_index = 2 },
         },
       }
     end,
@@ -979,8 +979,8 @@ require('lazy').setup({
   require 'custom.plugins.none-ls',
   require 'custom.plugins.fugitive',
   require 'custom.plugins.codeium',
-  require 'custom.plugins.copilot-cmp',
-  require 'custom.plugins.copilot',
+  -- require 'custom.plugins.copilot-cmp',
+  -- require 'custom.plugins.copilot',
   require 'custom.plugins.avante',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
