@@ -933,6 +933,7 @@ require('lazy').setup({
         'markdown_inline',
         'python',
         'query',
+        'regex',
         'sql',
         'typescript',
         'vim',
@@ -981,6 +982,7 @@ require('lazy').setup({
   require 'kickstart.plugins.autopairs',
   require 'kickstart.plugins.neo-tree',
   require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
+  require 'custom.plugins.snacks',
   require 'custom.plugins.none-ls',
   require 'custom.plugins.codeium',
   require 'custom.plugins.copilot-cmp',
