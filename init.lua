@@ -982,7 +982,6 @@ require('lazy').setup({
   require 'kickstart.plugins.neo-tree',
   require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
   require 'custom.plugins.none-ls',
-  require 'custom.plugins.fugitive',
   require 'custom.plugins.codeium',
   require 'custom.plugins.copilot-cmp',
   require 'custom.plugins.copilot',
