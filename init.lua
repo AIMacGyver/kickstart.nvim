@@ -875,8 +875,8 @@ require('lazy').setup({
           { name = 'nvim_lsp', priority = 100, group_index = 1 },
           { name = 'luasnip', priority = 95, group_index = 1 },
           { name = 'path', priority = 90, group_index = 1 },
-          { name = 'copilot', priority = 85, group_index = 1 },
-          { name = 'nvim_lsp_signature_help', priority = 80, group_index = 1 },
+          { name = 'nvim_lsp_signature_help', priority = 85, group_index = 1 },
+          { name = 'copilot', priority = 80, group_index = 2 },
         },
       }
     end,
@@ -1017,7 +1017,6 @@ require('lazy').setup({
   require 'kickstart.plugins.autopairs',
   require 'kickstart.plugins.neo-tree',
   require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
-  require 'custom.plugins.snacks',
   require 'custom.plugins.none-ls',
   require 'custom.plugins.copilot-cmp',
   require 'custom.plugins.copilot',
