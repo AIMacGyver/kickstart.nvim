@@ -876,7 +876,7 @@ require('lazy').setup({
           { name = 'luasnip', priority = 95, group_index = 1 },
           { name = 'path', priority = 90, group_index = 1 },
           { name = 'copilot', priority = 85, group_index = 1 },
-          { name = 'nvim_lsp_signature_help', priority = 85, group_index = 1 },
+          { name = 'nvim_lsp_signature_help', priority = 80, group_index = 1 },
         },
       }
     end,
