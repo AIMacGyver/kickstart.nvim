@@ -973,6 +973,7 @@ require('lazy').setup({
         'dockerfile',
         'go',
         'html',
+        'http',
         'javascript',
         'json',
         'lua',
@@ -1035,6 +1036,7 @@ require('lazy').setup({
   require 'custom.plugins.copilot-cmp',
   require 'custom.plugins.copilot',
   require 'custom.plugins.avante',
+  require 'custom.plugins.rest',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
