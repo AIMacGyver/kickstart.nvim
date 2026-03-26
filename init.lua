@@ -320,6 +320,7 @@ require('lazy').setup({
       -- Document existing key chains
       spec = {
         { '<leader>a', group = '[A]I' },
+        { '<leader>g', group = '[G]it' },
         { '<leader>c', group = '[C]laude' },
         { '<leader>s', group = '[S]earch', mode = { 'n', 'v' } },
         { '<leader>t', group = '[T]oggle' },
@@ -504,7 +505,7 @@ require('lazy').setup({
       'WhoIsSethDaniel/mason-tool-installer.nvim',
 
       -- Useful status updates for LSP.
-      { 'j-hui/fidget.nvim', opts = {} },
+      -- { 'j-hui/fidget.nvim', opts = {} }, -- replaced by snacks.notifier
     },
     config = function()
       -- Brief aside: **What is LSP?**
@@ -952,7 +953,7 @@ require('lazy').setup({
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
   require 'kickstart.plugins.debug',
-  require 'kickstart.plugins.indent_line',
+  -- require 'kickstart.plugins.indent_line', -- replaced by snacks.indent
   require 'kickstart.plugins.lint',
   require 'kickstart.plugins.autopairs',
   require 'kickstart.plugins.neo-tree',
