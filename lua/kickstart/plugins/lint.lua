@@ -8,7 +8,7 @@ return {
   config = function()
     local lint = require 'lint'
     lint.linters_by_ft = {
-      markdown = { 'markdownlint-cli2' },
+      markdown = { 'markdownlint-cli2' }, -- Make sure to install `markdownlint-cli2` via mason / npm
       go = { 'golangcilint' },
     }
 
