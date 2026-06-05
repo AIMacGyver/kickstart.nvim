@@ -25,6 +25,7 @@ return {
 
     -- Add your own debuggers here
     'leoluz/nvim-dap-go',
+    'mfussenegger/nvim-dap-python',
   },
   keys = {
     -- Basic debugging keymaps, feel free to change to your liking!
@@ -36,6 +37,9 @@ return {
     { '<leader>B', function() require('dap').set_breakpoint(vim.fn.input 'Breakpoint condition: ') end, desc = 'Debug: Set Breakpoint' },
     -- Toggle to see last session result. Without this, you can't see session output in case of unhandled exception.
     { '<F7>', function() require('dapui').toggle() end, desc = 'Debug: See last session result.' },
+    -- Python test-runner helpers (nvim-dap-python)
+    { '<leader>dn', function() require('dap-python').test_method() end, desc = 'Debug: Test nearest method', ft = 'python' },
+    { '<leader>df', function() require('dap-python').test_class() end, desc = 'Debug: Test class', ft = 'python' },
   },
   config = function()
     local dap = require 'dap'
@@ -55,6 +59,7 @@ return {
       ensure_installed = {
         -- Update this to ensure that you have the debuggers for the langs you want
         'delve',
+        'debugpy',
       },
     }
 
@@ -106,5 +111,21 @@ return {
         detached = vim.fn.has 'win32' == 0,
       },
     }
+
+    -- Python debugging
+    local python_uv = require 'custom.python_uv'
+    local debugpy_python = vim.fn.stdpath 'data' .. '/mason/packages/debugpy/venv/bin/python'
+    if vim.fn.has 'win32' == 1 then
+      debugpy_python = vim.fn.stdpath 'data' .. '/mason/packages/debugpy/venv/Scripts/python.exe'
+    end
+    local dap_python = require 'dap-python'
+    dap_python.setup(debugpy_python) -- python that *runs* debugpy
+
+    -- Run the debuggee with the project's uv .venv interpreter when available
+    dap_python.resolve_python = function()
+      local root = python_uv.get_root(0)
+      local py = root and python_uv.get_python(root) or nil
+      return py or debugpy_python
+    end
   end,
 }
