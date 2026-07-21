@@ -30,6 +30,8 @@ return {
       window = {
         mappings = {
           ['\\'] = 'close_window',
+          ['<space>'] = 'none', -- free up <space> so <leader> works inside neo-tree
+          ['<tab>'] = 'toggle_node',
         },
       },
     },
