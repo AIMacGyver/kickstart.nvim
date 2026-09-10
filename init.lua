@@ -976,6 +976,10 @@ require('lazy').setup({
       local function treesitter_try_attach(buf, language)
         -- check if parser exists and load it
         if not vim.treesitter.language.add(language) then return end
+
+        -- Check if the buffer is valid (might not be after install completes)
+        if not vim.api.nvim_buf_is_valid(buf) then return end
+
         -- enables syntax highlighting and other treesitter features
         vim.treesitter.start(buf, language)
 
